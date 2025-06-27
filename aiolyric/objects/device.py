@@ -191,7 +191,7 @@ class OperationStatus(LyricBaseObject):
         return self.attributes.get("circulationFanRequest", False)
 
 
-class LyricDevice(LyricBasePriorityClient):
+class LyricDevice(LyricBaseClient):
     """Lyric Device."""
 
     @property
