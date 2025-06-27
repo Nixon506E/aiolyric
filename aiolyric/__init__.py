@@ -106,7 +106,7 @@ class Lyric:
         # device id in the priority payload refers to the mac address of the device
         mac_id = priority.device_id
 
-        self._devices_dict[mac_id].current_priority = priority
+        self._devices_dict[mac_id].set_priority(priority)
 
         self._rooms_dict[mac_id] = {}
 
