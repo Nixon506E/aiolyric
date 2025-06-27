@@ -191,7 +191,7 @@ class OperationStatus(LyricBaseObject):
         return self.attributes.get("circulationFanRequest", False)
 
 
-class LyricDevice(LyricBaseClient):
+class LyricDevice(LyricBasePriorityClient):
     """Lyric Device."""
 
     @property
@@ -373,3 +373,11 @@ class LyricDevice(LyricBaseClient):
     def fan_mode(self):
         """Return the fan mode."""
         return self.attributes.get("fanMode", None)
+
+    @property
+    def current_priority(self):
+        """Return the changeable values."""
+        return self._priority
+
+    def set_priority(self, priority: LyricPriority):
+		self._priority = priority

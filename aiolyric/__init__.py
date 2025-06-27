@@ -105,6 +105,9 @@ class Lyric:
 
         # device id in the priority payload refers to the mac address of the device
         mac_id = priority.device_id
+
+        self._devices_dict[mac_id].set_priority(priority)
+
         self._rooms_dict[mac_id] = {}
 
         # add each room to the room dictionary. Rooms contain motion, temp, and humidity averages for all accessories in a room
